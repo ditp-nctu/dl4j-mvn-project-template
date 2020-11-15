@@ -40,6 +40,7 @@ import java.io.File;
  * Created by agibsonccc on 9/16/15.
  */
 public class LeNetMNIST {
+
     private static final Logger log = LoggerFactory.getLogger(LeNetMNIST.class);
 
     public static void main(String[] args) throws Exception {
@@ -53,8 +54,8 @@ public class LeNetMNIST {
             Create an iterator using the batch size for one iteration
          */
         log.info("Load data....");
-        DataSetIterator mnistTrain = new MnistDataSetIterator(batchSize,true,12345);
-        DataSetIterator mnistTest = new MnistDataSetIterator(batchSize,false,12345);
+        DataSetIterator mnistTrain = new MnistDataSetIterator(batchSize, true, 12345);
+        DataSetIterator mnistTest = new MnistDataSetIterator(batchSize, false, 12345);
 
         /*
             Construct the neural network
@@ -68,25 +69,28 @@ public class LeNetMNIST {
                 .updater(new Adam(1e-3))
                 .list()
                 .layer(new ConvolutionLayer.Builder(5, 5)
-                        //nIn and nOut specify depth. nIn here is the nChannels and nOut is the number of filters to be applied
+                        /*
+                         * nIn and nOut specify depth. nIn here is the nChannels 
+                         * and nOut is the number of filters to be applied
+                         */
                         .nIn(nChannels)
-                        .stride(1,1)
+                        .stride(1, 1)
                         .nOut(20)
                         .activation(Activation.IDENTITY)
                         .build())
                 .layer(new SubsamplingLayer.Builder(PoolingType.MAX)
-                        .kernelSize(2,2)
-                        .stride(2,2)
+                        .kernelSize(2, 2)
+                        .stride(2, 2)
                         .build())
                 .layer(new ConvolutionLayer.Builder(5, 5)
                         //Note that nIn need not be specified in later layers
-                        .stride(1,1)
+                        .stride(1, 1)
                         .nOut(50)
                         .activation(Activation.IDENTITY)
                         .build())
                 .layer(new SubsamplingLayer.Builder(PoolingType.MAX)
-                        .kernelSize(2,2)
-                        .stride(2,2)
+                        .kernelSize(2, 2)
+                        .stride(2, 2)
                         .build())
                 .layer(new DenseLayer.Builder().activation(Activation.RELU)
                         .nOut(500).build())
@@ -94,7 +98,7 @@ public class LeNetMNIST {
                         .nOut(outputNum)
                         .activation(Activation.SOFTMAX)
                         .build())
-                .setInputType(InputType.convolutionalFlat(28,28,1)) //See note below
+                .setInputType(InputType.convolutionalFlat(28, 28, 1)) //See note below
                 .build();
 
         /*
@@ -109,8 +113,7 @@ public class LeNetMNIST {
         For normal images (when using ImageRecordReader) use InputType.convolutional(height,width,depth).
         MNIST record reader is a special case, that outputs 28x28 pixel grayscale (nChannels=1) images, in a "flattened"
         row vector format (i.e., 1x784 vectors), hence the "convolutionalFlat" input type used here.
-        */
-
+         */
         MultiLayerNetwork model = new MultiLayerNetwork(conf);
         model.init();
 
@@ -120,7 +123,7 @@ public class LeNetMNIST {
 
         String path = FilenameUtils.concat(System.getProperty("java.io.tmpdir"), "lenetmnist.zip");
 
-        log.info("Saving model to tmp folder: "+path);
+        log.info("Saving model to tmp folder: " + path);
         model.save(new File(path), true);
 
         log.info("****************Example finished********************");
