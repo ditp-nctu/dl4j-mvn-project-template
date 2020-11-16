@@ -3,8 +3,10 @@ package org.deeplearning4j.examples.sample;
 import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.stream.IntStream;
 import org.apache.commons.io.FilenameUtils;
 import org.deeplearning4j.datasets.iterator.impl.MnistDataSetIterator;
 import org.deeplearning4j.nn.api.Layer;
@@ -22,7 +24,7 @@ public class TestModel extends PApplet {
     int dotSize = 10;
     MultiLayerNetwork model;
     DataSetIterator mnistTest;
-    String path;
+    String path = FilenameUtils.concat(System.getProperty("java.io.tmpdir"), "lenetmnist.zip");
 
     @Override
     public void settings() {
@@ -38,7 +40,6 @@ public class TestModel extends PApplet {
         strokeWeight(0.1f);
         stroke(100f);
         textSize(dotSize * 4);
-        path = FilenameUtils.concat(System.getProperty("java.io.tmpdir"), "lenetmnist.zip");
         try {
             mnistTest = new MnistDataSetIterator(batchSize, false, 12345);
             model = MultiLayerNetwork.load(new File(path), false);
@@ -51,53 +52,42 @@ public class TestModel extends PApplet {
     @Override
     public void draw() {
 
-        background(0);
         if (mnistTest.hasNext()) {
+            background(0);
             var input = mnistTest.next();
             var data0 = input.asList().get(0).getFeatures().toFloatVector();
             for (int y = 0; y < 28; y++) {
                 for (int x = 0; x < 28; x++) {
                     var index = y * 28 + x;
                     var point = data0[index] * 255;
-                    if (point > 255) throw new RuntimeException();
                     fill(point);
                     rect(x * dotSize, y * dotSize,
-                            (x + 1) * dotSize, (y + 1) * dotSize + dotSize);
+                            (x + 1) * dotSize, (y + 1) * dotSize);
                 }
             }
-            var array = model.activate(input.getFeatures(), Layer.TrainingMode.TEST).toFloatMatrix()[0];
-            var result = "";
-            var guess = 0;
-            var highest = 0f;
-            for (int i = 0; i < array.length; i++) {
-                float f = array[i];
-                result += String.format(" %d=%.3f ", i, f);
-                if (f > highest) {
-                    highest = f;
-                    guess = i;
-                }
-            }
+            var array = model.activate(input.getFeatures(), Layer.TrainingMode.TEST).toFloatVector();
+            var result = new StringBuilder();
+            var guess = IntStream.range(0, array.length)
+                    .peek(i -> result.append(String.format(" %d=%.3f ", i, array[i])))
+                    .boxed()
+                    .sorted(Comparator.comparing(i -> array[i], Comparator.reverseOrder()))
+                    .findFirst().get();
             var labels = input.getLabels().toFloatVector();
-            var answer = 0;
-            for (int i = 0; i < labels.length; i++) {
-                if (labels[i] > 0) {
-                    answer = i;
-                    break;
-                }
-            }
+            var answer = IntStream.range(0, labels.length)
+                    .filter(i -> labels[i] > 0)
+                    .findFirst().getAsInt();
             fill(guess == answer ? 255 : Color.RED.getRGB());
             text(answer, dotSize, dotSize * 4);
-            System.out.printf("%s %s\n",
+            System.out.printf("%s [%s]\n",
                     result,
-                    (answer == guess) ? "" : "[A=" + answer + ",G=" + guess + "]");
+                    "A=" + answer + (answer == guess ? "" : ",G=" + guess));
         } else {
-            var result = model.evaluate(mnistTest);
-            System.out.println(result);
             noLoop();
         }
     }
 
     public static void main(String[] args) {
-        PApplet.main(TestModel.class.getCanonicalName());
+
+        PApplet.main(TestModel.class.getName());
     }
 }
