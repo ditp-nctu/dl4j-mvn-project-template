@@ -44,7 +44,7 @@ import processing.core.PImage;
 public class Guess extends TestModel {
 
     Map<String, Integer> inputs;
-    Iterator<Entry<PImage, Integer>> source;
+    Iterator<SimpleEntry<PImage, Integer>> source;
 
     @Override
     public void setup() {
@@ -70,7 +70,7 @@ public class Guess extends TestModel {
             model = MultiLayerNetwork.load(new File(path), false);
             System.out.println(model.summary());
             source = inputs.entrySet().stream()
-                    .map(e -> (Entry<PImage, Integer>) new SimpleEntry<>(loadImage(filenameToURI(e.getKey()).getPath()), e.getValue()))
+                    .map(e -> new SimpleEntry<>(loadImage(filenameToURI(e.getKey()).getPath()), e.getValue()))
                     .collect(Collectors.toList())
                     .iterator();
         } catch (Exception ex) {
