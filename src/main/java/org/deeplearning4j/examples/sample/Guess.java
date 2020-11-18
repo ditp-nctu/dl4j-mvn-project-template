@@ -19,7 +19,10 @@ import java.awt.Color;
 import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.AbstractMap;
+import java.util.AbstractMap.SimpleEntry;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -52,23 +55,22 @@ public class Guess extends TestModel {
         stroke(100f);
         textSize(dotSize * 4);
 
-        inputs = Map.of(
-                "num_0.png", 0,
-                "num_1.png", 1,
-                "num_2.png", 2,
-                "num_3.png", 3,
-                "num_4.png", 4,
-                "num_5.png", 5,
-                "num_6.png", 6,
-                "num_7.png", 7,
-                "num_8.png", 8,
-                "num_9.png", 9
-        );
+        inputs = new HashMap<>();
+        inputs.put("num_0.png", 0);
+        inputs.put("num_1.png", 1);
+        inputs.put("num_2.png", 2);
+        inputs.put("num_3.png", 3);
+        inputs.put("num_4.png", 4);
+        inputs.put("num_5.png", 5);
+        inputs.put("num_6.png", 6);
+        inputs.put("num_7.png", 7);
+        inputs.put("num_8.png", 8);
+        inputs.put("num_9.png", 9);
         try {
             model = MultiLayerNetwork.load(new File(path), false);
             System.out.println(model.summary());
             source = inputs.entrySet().stream()
-                    .map(e -> Map.entry(loadImage(filenameToURI(e.getKey()).getPath()), e.getValue()))
+                    .map(e -> (Entry<PImage, Integer>) new SimpleEntry<>(loadImage(filenameToURI(e.getKey()).getPath()), e.getValue()))
                     .collect(Collectors.toList())
                     .iterator();
         } catch (Exception ex) {
@@ -91,23 +93,23 @@ public class Guess extends TestModel {
 
         if (source.hasNext()) {
             background(0);
-            var input = source.next();
-            var data = input.getKey().pixels;
+            Entry<PImage, Integer> input = source.next();
+            int[] data = input.getKey().pixels;
             float[] data0 = new float[data.length];
             for (int i = 0; i < data.length; i++) {
                 data0[i] = (float) (data[i] & 0x00ffff) / 0xffff;
             }
             for (int y = 0; y < 28; y++) {
                 for (int x = 0; x < 28; x++) {
-                    var index = y * 28 + x;
+                    int index = y * 28 + x;
                     fill(data0[index] * 255);
                     rect(x * dotSize, y * dotSize,
                             (x + 1) * dotSize, (y + 1) * dotSize);
                 }
             }
-            var array = model.activate(new NDArray(data0), Layer.TrainingMode.TEST).toFloatMatrix()[0];
-            var result = new StringBuilder();
-            var guess = IntStream.range(0, array.length)
+            float[] array = model.activate(new NDArray(data0), Layer.TrainingMode.TEST).toFloatVector();
+            StringBuilder result = new StringBuilder();
+            int guess = IntStream.range(0, array.length)
                     .peek(i -> result.append(String.format(" %d=%.3f ", i, array[i])))
                     .boxed()
                     .sorted(Comparator.comparing(i -> array[i], Comparator.reverseOrder()))

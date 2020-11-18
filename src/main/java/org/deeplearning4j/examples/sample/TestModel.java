@@ -11,6 +11,7 @@ import org.apache.commons.io.FilenameUtils;
 import org.deeplearning4j.datasets.iterator.impl.MnistDataSetIterator;
 import org.deeplearning4j.nn.api.Layer;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
+import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.dataset.api.iterator.DataSetIterator;
 import processing.core.PApplet;
 
@@ -54,26 +55,26 @@ public class TestModel extends PApplet {
 
         if (mnistTest.hasNext()) {
             background(0);
-            var input = mnistTest.next();
-            var data0 = input.asList().get(0).getFeatures().toFloatVector();
+            DataSet input = mnistTest.next();
+            float[] data0 = input.asList().get(0).getFeatures().toFloatVector();
             for (int y = 0; y < 28; y++) {
                 for (int x = 0; x < 28; x++) {
-                    var index = y * 28 + x;
-                    var point = data0[index] * 255;
+                    int index = y * 28 + x;
+                    float point = data0[index] * 255;
                     fill(point);
                     rect(x * dotSize, y * dotSize,
                             (x + 1) * dotSize, (y + 1) * dotSize);
                 }
             }
-            var array = model.activate(input.getFeatures(), Layer.TrainingMode.TEST).toFloatVector();
-            var result = new StringBuilder();
-            var guess = IntStream.range(0, array.length)
+            float[] array = model.activate(input.getFeatures(), Layer.TrainingMode.TEST).toFloatVector();
+            StringBuilder result = new StringBuilder();
+            int guess = IntStream.range(0, array.length)
                     .peek(i -> result.append(String.format(" %d=%.3f ", i, array[i])))
                     .boxed()
                     .sorted(Comparator.comparing(i -> array[i], Comparator.reverseOrder()))
                     .findFirst().get();
-            var labels = input.getLabels().toFloatVector();
-            var answer = IntStream.range(0, labels.length)
+            float[] labels = input.getLabels().toFloatVector();
+            int answer = IntStream.range(0, labels.length)
                     .filter(i -> labels[i] > 0)
                     .findFirst().getAsInt();
             fill(guess == answer ? 255 : Color.RED.getRGB());
