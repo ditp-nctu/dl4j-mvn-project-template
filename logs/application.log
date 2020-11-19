@@ -1,0 +1,48 @@
+2020-11-20 05:16:05,190 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in Animation Thread
+                
+Loaded [CpuBackend] backend
+
+2020-11-20 05:16:06,636 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in Animation Thread
+                
+Number of threads used for linear algebra: 4
+
+2020-11-20 05:16:06,639 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+*********************************** CPU Feature Check Warning ***********************************
+
+2020-11-20 05:16:06,639 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Warning: Initializing ND4J with Generic x86 binary on a CPU with AVX/AVX2 support
+
+2020-11-20 05:16:06,642 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Using ND4J with AVX/AVX2 will improve performance. See deeplearning4j.org/cpu for more details
+
+2020-11-20 05:16:06,642 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Or set environment variable ND4J_IGNORE_AVX=true to suppress this warning
+
+2020-11-20 05:16:06,642 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+*************************************************************************************************
+
+2020-11-20 05:16:06,923 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in Animation Thread
+                
+Number of threads used for OpenMP BLAS: 4
+
+2020-11-20 05:16:06,947 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Backend used: [CPU]; OS: [Windows 10]
+
+2020-11-20 05:16:06,947 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Cores: [8]; Memory: [5.0GB];
+
+2020-11-20 05:16:06,947 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Blas vendor: [OPENBLAS]
+
+2020-11-20 05:16:07,387 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in Animation Thread
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: ENABLED; inference: ENABLED], cacheMode set to [NONE]
+
