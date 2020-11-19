@@ -1105,3 +1105,243 @@ Blas vendor: [OPENBLAS]
                 
 Starting MultiLayerNetwork with WorkspaceModes set to [training: ENABLED; inference: ENABLED], cacheMode set to [NONE]
 
+2020-11-20 05:26:19,338 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in Animation Thread
+                
+Loaded [CpuBackend] backend
+
+2020-11-20 05:26:21,712 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in Animation Thread
+                
+Number of threads used for linear algebra: 4
+
+2020-11-20 05:26:21,715 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+*********************************** CPU Feature Check Warning ***********************************
+
+2020-11-20 05:26:21,715 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Warning: Initializing ND4J with Generic x86 binary on a CPU with AVX/AVX2 support
+
+2020-11-20 05:26:21,715 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Using ND4J with AVX/AVX2 will improve performance. See deeplearning4j.org/cpu for more details
+
+2020-11-20 05:26:21,716 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Or set environment variable ND4J_IGNORE_AVX=true to suppress this warning
+
+2020-11-20 05:26:21,716 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+*************************************************************************************************
+
+2020-11-20 05:26:21,995 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in Animation Thread
+                
+Number of threads used for OpenMP BLAS: 4
+
+2020-11-20 05:26:22,036 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Backend used: [CPU]; OS: [Windows 10]
+
+2020-11-20 05:26:22,036 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Cores: [8]; Memory: [5.0GB];
+
+2020-11-20 05:26:22,036 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Blas vendor: [OPENBLAS]
+
+2020-11-20 05:26:22,658 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in Animation Thread
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: ENABLED; inference: ENABLED], cacheMode set to [NONE]
+
+2020-11-20 05:28:20,993 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in Animation Thread
+                
+Loaded [CpuBackend] backend
+
+2020-11-20 05:28:22,697 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in Animation Thread
+                
+Number of threads used for linear algebra: 4
+
+2020-11-20 05:28:22,699 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+*********************************** CPU Feature Check Warning ***********************************
+
+2020-11-20 05:28:22,700 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Warning: Initializing ND4J with Generic x86 binary on a CPU with AVX/AVX2 support
+
+2020-11-20 05:28:22,700 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Using ND4J with AVX/AVX2 will improve performance. See deeplearning4j.org/cpu for more details
+
+2020-11-20 05:28:22,700 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Or set environment variable ND4J_IGNORE_AVX=true to suppress this warning
+
+2020-11-20 05:28:22,700 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+*************************************************************************************************
+
+2020-11-20 05:28:22,974 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in Animation Thread
+                
+Number of threads used for OpenMP BLAS: 4
+
+2020-11-20 05:28:23,009 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Backend used: [CPU]; OS: [Windows 10]
+
+2020-11-20 05:28:23,009 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Cores: [8]; Memory: [5.0GB];
+
+2020-11-20 05:28:23,009 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Blas vendor: [OPENBLAS]
+
+2020-11-20 05:28:23,573 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in Animation Thread
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: ENABLED; inference: ENABLED], cacheMode set to [NONE]
+
+2020-11-20 05:28:48,752 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in Animation Thread
+                
+Loaded [CpuBackend] backend
+
+2020-11-20 05:28:50,503 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in Animation Thread
+                
+Number of threads used for linear algebra: 4
+
+2020-11-20 05:28:50,505 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+*********************************** CPU Feature Check Warning ***********************************
+
+2020-11-20 05:28:50,505 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Warning: Initializing ND4J with Generic x86 binary on a CPU with AVX/AVX2 support
+
+2020-11-20 05:28:50,505 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Using ND4J with AVX/AVX2 will improve performance. See deeplearning4j.org/cpu for more details
+
+2020-11-20 05:28:50,505 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Or set environment variable ND4J_IGNORE_AVX=true to suppress this warning
+
+2020-11-20 05:28:50,505 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+*************************************************************************************************
+
+2020-11-20 05:28:50,780 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in Animation Thread
+                
+Number of threads used for OpenMP BLAS: 4
+
+2020-11-20 05:28:50,818 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Backend used: [CPU]; OS: [Windows 10]
+
+2020-11-20 05:28:50,818 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Cores: [8]; Memory: [5.0GB];
+
+2020-11-20 05:28:50,818 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Blas vendor: [OPENBLAS]
+
+2020-11-20 05:28:51,386 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in Animation Thread
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: ENABLED; inference: ENABLED], cacheMode set to [NONE]
+
+2020-11-20 05:29:17,388 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in Animation Thread
+                
+Loaded [CpuBackend] backend
+
+2020-11-20 05:29:19,827 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in Animation Thread
+                
+Number of threads used for linear algebra: 4
+
+2020-11-20 05:29:19,830 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+*********************************** CPU Feature Check Warning ***********************************
+
+2020-11-20 05:29:19,830 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Warning: Initializing ND4J with Generic x86 binary on a CPU with AVX/AVX2 support
+
+2020-11-20 05:29:19,831 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Using ND4J with AVX/AVX2 will improve performance. See deeplearning4j.org/cpu for more details
+
+2020-11-20 05:29:19,831 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Or set environment variable ND4J_IGNORE_AVX=true to suppress this warning
+
+2020-11-20 05:29:19,831 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+*************************************************************************************************
+
+2020-11-20 05:29:20,262 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in Animation Thread
+                
+Number of threads used for OpenMP BLAS: 4
+
+2020-11-20 05:29:20,314 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Backend used: [CPU]; OS: [Windows 10]
+
+2020-11-20 05:29:20,314 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Cores: [8]; Memory: [5.0GB];
+
+2020-11-20 05:29:20,314 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Blas vendor: [OPENBLAS]
+
+2020-11-20 05:29:21,147 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in Animation Thread
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: ENABLED; inference: ENABLED], cacheMode set to [NONE]
+
+2020-11-20 06:05:57,636 - [INFO] - from org.nd4j.linalg.factory.Nd4jBackend in Animation Thread
+                
+Loaded [CpuBackend] backend
+
+2020-11-20 06:05:59,114 - [INFO] - from org.nd4j.nativeblas.NativeOpsHolder in Animation Thread
+                
+Number of threads used for linear algebra: 4
+
+2020-11-20 06:05:59,116 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+*********************************** CPU Feature Check Warning ***********************************
+
+2020-11-20 06:05:59,116 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Warning: Initializing ND4J with Generic x86 binary on a CPU with AVX/AVX2 support
+
+2020-11-20 06:05:59,116 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Using ND4J with AVX/AVX2 will improve performance. See deeplearning4j.org/cpu for more details
+
+2020-11-20 06:05:59,116 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+Or set environment variable ND4J_IGNORE_AVX=true to suppress this warning
+
+2020-11-20 06:05:59,116 - [WARN] - from org.nd4j.linalg.cpu.nativecpu.CpuNDArrayFactory in Animation Thread
+                
+*************************************************************************************************
+
+2020-11-20 06:05:59,396 - [INFO] - from org.nd4j.nativeblas.Nd4jBlas in Animation Thread
+                
+Number of threads used for OpenMP BLAS: 4
+
+2020-11-20 06:05:59,426 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Backend used: [CPU]; OS: [Windows 10]
+
+2020-11-20 06:05:59,426 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Cores: [8]; Memory: [5.0GB];
+
+2020-11-20 06:05:59,426 - [INFO] - from org.nd4j.linalg.api.ops.executioner.DefaultOpExecutioner in Animation Thread
+                
+Blas vendor: [OPENBLAS]
+
+2020-11-20 06:05:59,889 - [INFO] - from org.deeplearning4j.nn.multilayer.MultiLayerNetwork in Animation Thread
+                
+Starting MultiLayerNetwork with WorkspaceModes set to [training: ENABLED; inference: ENABLED], cacheMode set to [NONE]
+

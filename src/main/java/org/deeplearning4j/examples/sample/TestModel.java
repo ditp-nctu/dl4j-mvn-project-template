@@ -55,7 +55,7 @@ public class TestModel extends PApplet {
       if (mnistTest.hasNext()) {
          background(0);
          var input = mnistTest.next();
-         var data0 = input.asList().get(0).getFeatures().toFloatVector();
+         var data0 = input.getFeatures().toFloatVector();
          for (int y = 0; y < 28; y++) {
             for (int x = 0; x < 28; x++) {
                var index = y * 28 + x;
