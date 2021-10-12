@@ -1,4 +1,4 @@
-package org.deeplearning4j.examples.sample;
+package art.cctcc.dl4j.examples;
 
 import java.awt.Color;
 import java.io.File;

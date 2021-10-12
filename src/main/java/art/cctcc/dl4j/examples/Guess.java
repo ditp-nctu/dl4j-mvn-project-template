@@ -13,12 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.deeplearning4j.examples.sample;
+package art.cctcc.dl4j.examples;
 
 import java.awt.Color;
 import java.io.File;
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Map;
@@ -31,7 +29,6 @@ import org.deeplearning4j.nn.api.Layer;
 import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.nd4j.linalg.cpu.nativecpu.NDArray;
 import processing.core.PApplet;
-import processing.core.PImage;
 
 /**
  *
