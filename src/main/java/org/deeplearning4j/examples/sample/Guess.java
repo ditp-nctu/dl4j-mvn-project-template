@@ -18,9 +18,9 @@ package org.deeplearning4j.examples.sample;
 import java.awt.Color;
 import java.io.File;
 import java.io.InputStream;
+import java.util.AbstractMap.SimpleEntry;
 import java.util.Comparator;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Properties;
 import java.util.logging.Level;
@@ -39,7 +39,7 @@ import processing.core.PImage;
 public class Guess extends TestModel {
 
    Properties inputs = new Properties();
-   Iterator<Entry<String, Integer>> source;
+   Iterator<SimpleEntry<String, Integer>> source;
 
    static final String INPUT_LIST = "/input_list.properties";
 
@@ -61,7 +61,7 @@ public class Guess extends TestModel {
       }
       System.out.println(model.summary());
       source = inputs.entrySet().stream()
-              .map(e -> Map.entry(e.getKey().toString(), Integer.valueOf(e.getValue().toString().trim())))
+              .map(e -> new SimpleEntry<>(e.getKey().toString(), Integer.valueOf(e.getValue().toString().trim())))
               .iterator();
    }
 
